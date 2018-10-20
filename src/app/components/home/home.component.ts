@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 
-import { NgBarnService } from 'ng-barn';
+import { StoreService } from 'ng-barn';
 
 import { User } from '../../models/user';
 
@@ -19,7 +19,7 @@ export class HomeComponent implements OnInit {
   editing: boolean;
 
   constructor(
-    private store: NgBarnService
+    private store: StoreService
   ) {
     store.select('users');
     store.set([

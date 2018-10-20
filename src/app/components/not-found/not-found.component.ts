@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
-import { NgBarnService } from 'ng-barn';
+import { StoreService } from 'ng-barn';
 
 import { User } from '../../models/user';
 
@@ -14,7 +14,7 @@ export class NotFoundComponent implements OnInit {
   list: User[];
 
   constructor(
-    private store: NgBarnService
+    private store: StoreService
   ) {
     store.select('users');
   }

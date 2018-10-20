@@ -1,10 +1,13 @@
-# Barn
+# [Barn](https://github.com/tantaroth/ng-barn)
 
 Es una librería básica creada para **angular 2+**, inspirada en **redux** para el manejo de datos.
 
 ## Instalar
 ```
-npm install ng-barn
+git clone https://github.com/tantaroth/barn-example.git
+```
+```
+npm install
 ```
 
 ### Ejemplo de uso básico
@@ -36,7 +39,7 @@ export  class AppModule { }
 *app.component.ts*
 ```
 import { Component } from  '@angular/core';  
-import { NgBarnService } from  'ng-barn';  
+import { StoreService } from  'ng-barn';  
   
 @Component({  
 	selector: 'app-root',  
@@ -47,7 +50,7 @@ import { NgBarnService } from  'ng-barn';
 export  class AppComponent {  
 	list: any[];  
 	constructor(  
-		private store: NgBarnService  
+		private store: StoreService  
 	) {  
 		store.select('users');  
 		store.set([  
@@ -111,7 +114,7 @@ export  class AppModule { }
 ```
 import { Component, OnInit } from  '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
-import { NgBarnService } from  'ng-barn';  
+import { StoreService } from  'ng-barn';  
 
 @Component({  
 	selector: 'app-root',
@@ -124,7 +127,7 @@ export  class AppComponent implements OnInit {
 	listed: boolean;  
 	editing: boolean;
 	constructor(  
-		private store: NgBarnService  
+		private store: StoreService  
 	) {  
 		store.select('users');  
 		store.set([  
